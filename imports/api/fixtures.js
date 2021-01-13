@@ -1,32 +1,79 @@
-import { Meteor } from 'meteor/meteor';
-import Links from './collections/Links.js';
+import {Meteor} from 'meteor/meteor';
+import Subjects from './collections/Subjects.js';
+import Departments from './collections/Departments.js';
+import Students from './collections/Students.js';
 
 Meteor.startup(() => {
-  // if the Links collection is empty
-  if (Links.find().count() === 0) {
+  // if the Departments collection is empty
+  if (Departments.find().count() === 0) {
     const data = [
       {
-        title: 'Do the Tutorial',
-        url: 'https://www.meteor.com/try',
+        name: 'CSE',
+        total_students: 1,
         createdAt: new Date(),
       },
       {
-        title: 'Follow the Guide',
-        url: 'http://guide.meteor.com',
+        name: 'BBA',
+        total_students: 0,
         createdAt: new Date(),
       },
       {
-        title: 'Read the Docs',
-        url: 'https://docs.meteor.com',
-        createdAt: new Date(),
-      },
-      {
-        title: 'Discussions',
-        url: 'https://forums.meteor.com',
+        name: 'EEE',
+        total_students: 0,
         createdAt: new Date(),
       },
     ];
 
-    data.forEach(link => Links.insert(link));
+    data.forEach(dept => Departments.insert(dept));
+  }
+  // if the Subjects collection is empty
+  if (Subjects.find().count() === 0) {
+    const data = [
+      {
+        name: 'Calculus',
+        department: ['CSE', 'EEE'],
+        total_students: 0,
+        createdAt: new Date(),
+      },
+      {
+        name: 'English',
+        department: ['CSE', 'EEE', 'BBA'],
+        total_students: 1,
+        createdAt: new Date(),
+      },
+      {
+        name: 'Management',
+        department: ['BBA'],
+        total_students: 0,
+        createdAt: new Date(),
+      },
+      {
+        name: 'Electronics',
+        department: ['EEE'],
+        total_students: 0,
+        createdAt: new Date(),
+      },
+      {
+        name: 'Algorithms',
+        department: ['CSE'],
+        total_students: 1,
+        createdAt: new Date(),
+      },
+    ];
+
+    data.forEach(subj => Subjects.insert(subj));
+  }
+  // if the Students collection is empty
+  if (Students.find().count() === 0) {
+    const data = [
+      {
+        name: 'Tim',
+        department: 'CSE',
+        subjects: ['English', 'Algorithms'],
+        createdAt: new Date(),
+      },
+    ];
+
+    data.forEach(stud => Students.insert(stud));
   }
 });

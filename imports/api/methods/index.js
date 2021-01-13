@@ -1,4 +1,3 @@
-import './createLink';
 import './createDepartment';
 import './createStudent';
 import './createSubject';

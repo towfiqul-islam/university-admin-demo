@@ -1,6 +1,6 @@
 ## University Admin Demo
 
-### Made with Meteor.js, Vue.JS and MongoDB
+### Made with Meteor.js, Vue.JS, TailwindCSS, and MongoDB
 
 To run the project on your local machine
 
