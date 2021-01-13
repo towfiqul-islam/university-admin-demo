@@ -9,7 +9,7 @@ if (Meteor.isServer) {
       Departments.remove({});
     });
 
-    it('can update total_students count to a given department', function () {
+    it('can decrease total_students count to a given department', function () {
       // Insert a new department with total_students of 2
       const dept = Departments.insert({
         name: 'EEE',

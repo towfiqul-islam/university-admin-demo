@@ -112,8 +112,11 @@ export default {
     },
     // To remove a student completely from the DB
     removeStudent(student) {
+      // Removes the student from students collection
       Meteor.call('removeStudent', student._id)
+      // Updates total_students count in departments collection
       Meteor.call('decrease_total_student_on_department', student.department)
+      // Updates total_students count in subjects collection
       Meteor.call('decrease_total_student_on_subjects', student._id, student.subjects)
     },
 
