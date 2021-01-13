@@ -18,7 +18,7 @@ if (Meteor.isServer) {
         createdAt: new Date(),
       });
 
-      // Retrieve _id of newly inserted student
+      // Retrieve id of newly inserted student
       const {_id} = Students.findOne({name: stu.name});
 
       const updateStudent = Meteor.server.method_handlers['updateStudent'];

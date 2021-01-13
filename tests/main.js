@@ -5,10 +5,16 @@ import '../imports/api/collections/__tests__/students.tests.js';
 
 import '../imports/api/methods/__tests__/createDepartment.tests';
 import '../imports/api/methods/__tests__/updateDepartment.tests';
+
 import '../imports/api/methods/__tests__/createSubject.tests';
 import '../imports/api/methods/__tests__/updateSubject.tests';
+
 import '../imports/api/methods/__tests__/createStudent.tests';
 import '../imports/api/methods/__tests__/updateStudent.tests';
+import '../imports/api/methods/__tests__/removeStudent.tests';
+
+import '../imports/api/methods/__tests__/decrease_total_student_on_department.tests';
+import '../imports/api/methods/__tests__/decrease_total_student_on_subjects.tests';
 
 describe('university-admin', function () {
   it('package.json has correct name', async function () {
